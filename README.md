@@ -393,6 +393,10 @@ On Linux
 export CMAKE_PREFIX_PATH="${CONDA_PREFIX:-'$(dirname $(which conda))/../'}:${CMAKE_PREFIX_PATH}"
 CMAKE_ONLY=1 python setup.py build
 ccmake build  # or cmake-gui build
+
+MEMO for PPC64LE Arch
+USE_CUFILE=0 CUDACXX=/usr/local/cuda-12.4/bin/nvcc CMAKE_CUDA_ARCHITECTURES=native USE_CUDA=1 python setup.py build
+USE_CUFILE=0 CUDACXX=/usr/local/cuda-12.4/bin/nvcc CMAKE_CUDA_ARCHITECTURES=native USE_CUDA=1 python setup.py bdist_wheel
 ```
 
 On macOS
